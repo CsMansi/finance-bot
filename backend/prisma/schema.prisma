@@ -1,0 +1,54 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String       @id @default(cuid())
+  email     String       @unique
+  password  String
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  threads   ChatThread[]
+}
+
+model ChatThread {
+  id        String        @id @default(cuid())
+  title     String        @default("New Chat")
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  ChatMessage[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([userId])
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  role      String // "user" or "assistant"
+  content   String
+  reasoning String? // JSON string for "thinking" trace
+  threadId  String
+  thread    ChatThread  @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  sources   Source[]
+  createdAt DateTime    @default(now())
+
+  @@index([threadId])
+}
+
+model Source {
+  id        String       @id @default(cuid())
+  url       String
+  title     String
+  snippet   String?
+  messageId String
+  message   ChatMessage  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@index([messageId])
+}
