@@ -11,12 +11,15 @@ services:
       - ./frontend:/app
       - /app/node_modules
       - /app/.next
+    environment: # <-- Add this section
+      - NEXT_WEBPACK_USEPOLLING=true
     env_file:
       - .env
     depends_on:
       - backend
     networks:
       - app-network
+    command: npm run start
 
   backend:
     build:
