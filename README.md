@@ -7,7 +7,7 @@ This project is a submission for the Full Stack Developer technical assessment a
 ## ✨ Core Features
 
 -   **Live Conversational Interface**: Real-time, token-level streaming of assistant messages. 
--   **"Show Thinking" Trace**: Separate panel to view the agent's reasoning process and tool usage.
+-   **"Show Thinking" Trace**: Separate panel to view the agent's reasoning process and tool usage. 
 -   **Persistent Chat Threads**: Each user has isolated chat threads with a history of at least 100 messages.
 -   **User Authentication**: Secure email and password login system using JWT for session management.
 -   **Advanced Memory System**:
