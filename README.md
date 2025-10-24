@@ -1,6 +1,6 @@
 # Deep Finance Research Chatbot
 
-This project is a submission for the Full Stack Developer technical assessment at Deqode Labs. It is an intelligent chatbot designed to conduct deep, multi-step web research on financial topics, provide cited reports, and maintain a persistent chat history for each user.
+This project is a submission for the Full Stack Developer technical assessment at Deqode Labs. It is an intelligent chatbot designed to conduct deep, multi-step web research on financial topics, provide cited reports, and maintain a persistent chat history for each user. 
 
 ---
 
