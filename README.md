@@ -4,7 +4,7 @@ This project is a submission for the Full Stack Developer technical assessment a
 
 ---
 
-## ✨ Core Features
+## ✨ Core Features 
 
 -   **Live Conversational Interface**: Real-time, token-level streaming of assistant messages. 
 -   **"Show Thinking" Trace**: Separate panel to view the agent's reasoning process and tool usage. 
